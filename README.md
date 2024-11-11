@@ -12,6 +12,7 @@ The EFI is cleaned of "personal" information such as serial numbers and MAC addr
 - [Credits](#credits)
 
 # Hardware Specification
+
 |||
 |-|-|
 | Model | CTL Google Meet Compute System GQE10C, Chromebox Excelsior board |
@@ -23,6 +24,13 @@ The EFI is cleaned of "personal" information such as serial numbers and MAC addr
 | Ethernet NIC | Realtek RTL8111H |
 | Wifi/BT Card | Intel AC7265 |
 | BIOS revision | MrChromebox-2408.1 UEFI |
+
+#### Device pictures
+![Exterior front](resources/pictures/00-exterior-front.jpg "Exterior - front")
+![Exterior back](resources/pictures/01-exterior-back.jpg "Exterior - back")
+![Motherboard front](resources/pictures/02-board-front.jpg "Motherboard - front")
+![Motherboard back](resources/pictures/03-board-back.jpg "Motherboard - back")
+
 
 #### Known working memory modules
 - Apacer 76.A305G.D330B 2GB PC4-2400T CL17 (original memory)
