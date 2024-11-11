@@ -47,6 +47,7 @@ The MacOS version I'm using is **Sonoma 14.7.1** downloaded with `macrecovery`
 - **GPU acceleration** works
 - **Bluetooth** works - tested with a keyboard and a mouse
 - **iServices** untested, I don't even have any Apple products, so I don't really care
+- **Audio** the onboard combo jack doesn't work, DP/USB-C audio works
 
 # Installation Process
 
