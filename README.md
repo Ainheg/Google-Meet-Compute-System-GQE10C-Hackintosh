@@ -31,6 +31,8 @@ The EFI is cleaned of "personal" information such as serial numbers and MAC addr
 
 # Current Status
 
+The MacOS version I'm using is **Sonoma 14.7.1** downloaded with `macrecovery`
+
 - **Ethernet** works when the RTL8111H.kext is supplied with *fallbackMAC*
 - **WiFi** works really well for a AC7265 card, I get around 550 MBit/s download speed realatively close to the router. 
 - **AirPlay** works
@@ -40,7 +42,7 @@ The EFI is cleaned of "personal" information such as serial numbers and MAC addr
 
 # Installation Process
 
-I followed the Dortania guide section for Kaby Lake desktops and used that as the starting point. However, the MacOS installer wouldn't boot, so I had to dig deeper. After inspecting the ACPI tables dump, I realized the CPU cores were not defined as Processor objects so I had to create the CPU WRAP SSDT. I did so following [this guide](https://www.tonymacx86.com/threads/cpu-wrapping-ssdt-cpu-wrap-ssdt-cpur-acpi0007.316894/). Then the next step was adapting the PLUG SSDT to make use of the newly wrapped CPU. With the two SSDTs added, the installer finally booted. At this point, the only thing missing was Ethernet connection. The solution turned out to be pretty simple, since the NIC was showing up when using `ifconfig` from the terminal, but the MAC address was missing. Supplying the `fallbackMAC` value in `RealtekRTL8111.kext`'s `Info.plist` was all I needed to start MacOS Sonoma installation. The last issue was a bootloop on the second stage of the installation, the solution, again, turned out to be pretty simple, as all I had to do was set `SecureBootModel` to `Disabled`.
+I followed the Dortania guide section for Kaby Lake desktops and used that as the starting point. However, the MacOS installer wouldn't boot, so I had to dig deeper. After inspecting the ACPI tables dump, I realized the CPU cores were not defined as Processor objects so I had to create the CPU WRAP SSDT. I did so following [this guide](https://www.tonymacx86.com/threads/cpu-wrapping-ssdt-cpu-wrap-ssdt-cpur-acpi0007.316894/). Then the next step was adapting the PLUG SSDT to make use of the newly wrapped CPU. With the two SSDTs added, the installer finally booted. At this point, the only thing missing was Ethernet connection. The solution turned out to be pretty simple, since the NIC was showing up when using `ifconfig` from the terminal, but the MAC address was missing. Supplying the `fallbackMAC` value in RealtekRTL8111.kext's Info.plist file was all I needed to start MacOS Sonoma installation. The last issue was a bootloop on the second stage of the installation, the solution, again, turned out to be pretty simple, as all I had to do was set `SecureBootModel` to `Disabled`.
 
 # Credits
 
@@ -52,4 +54,4 @@ Huge thanks to:
 - **[OpenIntelWireless](https://github.com/OpenIntelWireless)** for providing [AirportItlwm](https://github.com/OpenIntelWireless/itlwm) and [IntelBluetoothFirmware](https://github.com/OpenIntelWireless/IntelBluetoothFirmware).
 - **[USBToolBox](https://github.com/USBToolBox)** for providing [USBToolBox tool](https://github.com/USBToolBox/tool)
 
-- and Discord users from [/r/Hackintosh](https://www.reddit.com/r/hackintosh/) server: **auq3l**, **craigfederighi_is_awesome**, **eazyblack**, **.krazykilla** and **milktoast56** for helping with troubleshooting and providing kind words of encouragement
+- and Discord users from [/r/Hackintosh](https://www.reddit.com/r/hackintosh/) server: **auq3l**, **craigfederighi_is_awesome**, **eazyblack**, **.krazykilla** and **milktoast56** for helping with troubleshooting and/or providing kind words of encouragement 
