@@ -19,7 +19,7 @@ The EFI is cleaned of "personal" information such as serial numbers and MAC addr
 | CPU | Intel Core i7-8550U |
 | GPU | UHD 620 |
 | RAM | 16GB (The machine originally came with only 2x2GB, so I upgraded it to 2x8GB) |
-| SSD | M.2 SATA SSSTC CV8-8E128 128 GB |
+| SSD | M.2 SATA SSSTC CV8-8E128 128 GB (M.2 SATA and NVME - PCIe 3.0 x 4 - drives are supported) |
 | Audio Codec | Unknown |
 | Ethernet NIC | Realtek RTL8111H |
 | Wifi/BT Card | Intel AC7265 |
